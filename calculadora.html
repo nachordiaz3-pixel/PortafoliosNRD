@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora | Portafolio</title>
+  <link rel="stylesheet" href="calculadora.css">
+</head>
+<body>
+
+  <header class="cabecera">
+    <a class="volver" href="index.html">&larr; Volver al portafolio</a>
+    <h1>Calculadora</h1>
+    <p class="subtitulo">Suma, resta, multiplicación, división, potencia, raíz cuadrada y porcentaje.</p>
+  </header>
+
+  <main>
+    <section class="calculadora" aria-label="Calculadora">
+
+      <!-- Pantalla de resultados -->
+      <div class="pantalla" role="status" aria-live="polite">
+        <div id="pantalla-historial" class="pantalla__historial"></div>
+        <div id="pantalla-actual" class="pantalla__actual">0</div>
+      </div>
+
+      <!-- Teclado -->
+      <div id="teclado" class="teclado">
+        <button class="tecla tecla--funcion" data-tipo="accion" data-valor="raiz" aria-label="Raíz cuadrada">√</button>
+        <button class="tecla tecla--funcion" data-tipo="op" data-valor="^" aria-label="Potencia">x<sup>y</sup></button>
+        <button class="tecla tecla--funcion" data-tipo="accion" data-valor="porcentaje" aria-label="Porcentaje">%</button>
+        <button class="tecla tecla--operador" data-tipo="op" data-valor="/" aria-label="Dividir">÷</button>
+
+        <button class="tecla tecla--borrar" data-tipo="accion" data-valor="limpiar" aria-label="Borrar todo">C</button>
+        <button class="tecla tecla--funcion" data-tipo="accion" data-valor="borrar" aria-label="Borrar último dígito">⌫</button>
+        <button class="tecla tecla--funcion" data-tipo="accion" data-valor="signo" aria-label="Cambiar signo">±</button>
+        <button class="tecla tecla--operador" data-tipo="op" data-valor="*" aria-label="Multiplicar">×</button>
+
+        <button class="tecla" data-tipo="num" data-valor="7">7</button>
+        <button class="tecla" data-tipo="num" data-valor="8">8</button>
+        <button class="tecla" data-tipo="num" data-valor="9">9</button>
+        <button class="tecla tecla--operador" data-tipo="op" data-valor="-" aria-label="Restar">−</button>
+
+        <button class="tecla" data-tipo="num" data-valor="4">4</button>
+        <button class="tecla" data-tipo="num" data-valor="5">5</button>
+        <button class="tecla" data-tipo="num" data-valor="6">6</button>
+        <button class="tecla tecla--operador" data-tipo="op" data-valor="+" aria-label="Sumar">+</button>
+
+        <button class="tecla" data-tipo="num" data-valor="1">1</button>
+        <button class="tecla" data-tipo="num" data-valor="2">2</button>
+        <button class="tecla" data-tipo="num" data-valor="3">3</button>
+        <button class="tecla tecla--igual" data-tipo="accion" data-valor="igual" aria-label="Igual">=</button>
+
+        <button class="tecla tecla--cero" data-tipo="num" data-valor="0">0</button>
+        <button class="tecla" data-tipo="accion" data-valor="decimal" aria-label="Coma decimal">,</button>
+      </div>
+
+    </section>
+    <p class="ayuda">Puedes usar también el teclado: números, <kbd>+</kbd> <kbd>-</kbd> <kbd>*</kbd> <kbd>/</kbd> <kbd>^</kbd>, <kbd>Enter</kbd>, <kbd>Backspace</kbd> y <kbd>Esc</kbd>.</p>
+  </main>
+
+  <footer class="pie">
+    <p>Proyecto 3.1 &middot; Calculadora &middot; HTML, CSS y JavaScript</p>
+  </footer>
+
+  <script src="calculadora.js"></script>
+</body>
+</html>

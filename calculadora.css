@@ -1,0 +1,250 @@
+/* ==========================================================
+   Calculadora - estilos
+   Para integrarla con el resto del portafolio, cambia solo
+   las variables de :root (colores, tipografía y bordes).
+   ========================================================== */
+
+:root {
+  --color-fondo: #0f172a;
+  --color-superficie: #1e293b;
+  --color-pantalla: #0b1220;
+  --color-texto: #e2e8f0;
+  --color-texto-suave: #94a3b8;
+  --color-tecla: #334155;
+  --color-tecla-hover: #475569;
+  --color-funcion: #475569;
+  --color-operador: #6366f1;
+  --color-operador-hover: #818cf8;
+  --color-igual: #22c55e;
+  --color-igual-hover: #4ade80;
+  --color-borrar: #ef4444;
+  --color-error: #f87171;
+  --radio: 14px;
+  --fuente: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  --fuente-numeros: "Consolas", "SF Mono", "Courier New", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--fuente);
+}
+
+/* ---------- Cabecera ---------- */
+.cabecera {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.cabecera h1 {
+  margin: 12px 0 4px;
+  font-size: 2rem;
+}
+
+.subtitulo {
+  margin: 0;
+  color: var(--color-texto-suave);
+  font-size: 0.95rem;
+}
+
+.volver {
+  color: var(--color-operador-hover);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.volver:hover,
+.volver:focus-visible {
+  text-decoration: underline;
+}
+
+/* ---------- Calculadora ---------- */
+main {
+  width: 100%;
+  max-width: 360px;
+}
+
+.calculadora {
+  background: var(--color-superficie);
+  padding: 20px;
+  border-radius: 22px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- Pantalla ---------- */
+.pantalla {
+  background: var(--color-pantalla);
+  border-radius: var(--radio);
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  text-align: right;
+  min-height: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.pantalla__historial {
+  min-height: 1.4em;
+  color: var(--color-texto-suave);
+  font-family: var(--fuente-numeros);
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pantalla__actual {
+  font-family: var(--fuente-numeros);
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pantalla__actual.pequeno {
+  font-size: 1.6rem;
+}
+
+.pantalla__actual.error {
+  color: var(--color-error);
+  font-size: 1.2rem;
+}
+
+/* ---------- Teclado ---------- */
+.teclado {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.tecla {
+  padding: 16px 0;
+  border: none;
+  border-radius: var(--radio);
+  background: var(--color-tecla);
+  color: var(--color-texto);
+  font-family: var(--fuente);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.08s;
+}
+
+.tecla:hover {
+  background: var(--color-tecla-hover);
+}
+
+.tecla:active,
+.tecla.activo {
+  transform: scale(0.94);
+}
+
+.tecla:focus-visible {
+  outline: 3px solid var(--color-operador-hover);
+  outline-offset: 2px;
+}
+
+.tecla sup {
+  font-size: 0.65em;
+}
+
+.tecla--funcion {
+  background: var(--color-funcion);
+  font-size: 1.1rem;
+}
+
+.tecla--operador {
+  background: var(--color-operador);
+}
+
+.tecla--operador:hover {
+  background: var(--color-operador-hover);
+}
+
+.tecla--borrar {
+  background: var(--color-borrar);
+}
+
+.tecla--borrar:hover {
+  background: #f87171;
+}
+
+.tecla--igual {
+  grid-row: span 2;
+  background: var(--color-igual);
+  font-size: 1.6rem;
+  color: #052e16;
+  font-weight: 700;
+}
+
+.tecla--igual:hover {
+  background: var(--color-igual-hover);
+}
+
+.tecla--cero {
+  grid-column: span 2;
+}
+
+/* ---------- Ayuda y pie ---------- */
+.ayuda {
+  margin: 16px 0 0;
+  text-align: center;
+  color: var(--color-texto-suave);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+kbd {
+  background: var(--color-superficie);
+  border: 1px solid var(--color-tecla);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-family: var(--fuente-numeros);
+  font-size: 0.85em;
+}
+
+.pie {
+  margin-top: auto;
+  padding-top: 32px;
+  color: var(--color-texto-suave);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.pie p {
+  margin: 0;
+}
+
+/* ---------- Pantallas pequeñas ---------- */
+@media (max-width: 380px) {
+  .calculadora {
+    padding: 14px;
+  }
+
+  .teclado {
+    gap: 8px;
+  }
+
+  .tecla {
+    padding: 14px 0;
+  }
+
+  .pantalla__actual {
+    font-size: 2rem;
+  }
+}
