@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piedra, papel o tijera | Portafolio</title>
+  <link rel="stylesheet" href="piedra-papel-tijera.css">
+</head>
+<body>
+
+  <header class="cabecera">
+    <a class="volver" href="index.html">&larr; Volver al portafolio</a>
+    <h1>Piedra, papel o tijera</h1>
+    <p class="subtitulo">Elige tu jugada y vence al ordenador.</p>
+  </header>
+
+  <main class="juego">
+
+    <!-- Marcador -->
+    <section class="marcador" aria-label="Marcador">
+      <div class="marcador__caja marcador__caja--jugador">
+        <span class="marcador__etiqueta">Tú</span>
+        <span id="marcador-jugador" class="marcador__valor">0</span>
+      </div>
+      <div class="marcador__caja marcador__caja--empate">
+        <span class="marcador__etiqueta">Empates</span>
+        <span id="marcador-empates" class="marcador__valor">0</span>
+      </div>
+      <div class="marcador__caja marcador__caja--pc">
+        <span class="marcador__etiqueta">Ordenador</span>
+        <span id="marcador-pc" class="marcador__valor">0</span>
+      </div>
+    </section>
+
+    <!-- Arena de la ronda -->
+    <section class="arena" aria-label="Ronda actual">
+      <div class="jugador">
+        <span class="jugador__nombre">Tú</span>
+        <div id="eleccion-jugador" class="mano" aria-label="Tu elección">?</div>
+      </div>
+
+      <span class="vs">VS</span>
+
+      <div class="jugador">
+        <span class="jugador__nombre">Ordenador</span>
+        <div id="eleccion-pc" class="mano" aria-label="Elección del ordenador">?</div>
+      </div>
+    </section>
+
+    <p id="resultado" class="resultado" role="status" aria-live="polite">Elige una opción para empezar</p>
+
+    <!-- Opciones -->
+    <section class="opciones" aria-label="Elige tu jugada">
+      <button class="opcion" data-eleccion="piedra">
+        <span class="opcion__icono" aria-hidden="true">✊</span>
+        <span class="opcion__texto">Piedra</span>
+      </button>
+      <button class="opcion" data-eleccion="papel">
+        <span class="opcion__icono" aria-hidden="true">✋</span>
+        <span class="opcion__texto">Papel</span>
+      </button>
+      <button class="opcion" data-eleccion="tijera">
+        <span class="opcion__icono" aria-hidden="true">✌️</span>
+        <span class="opcion__texto">Tijera</span>
+      </button>
+    </section>
+
+    <!-- Historial -->
+    <section class="historial" aria-label="Historial de rondas">
+      <div class="historial__cabecera">
+        <h2>Historial</h2>
+        <button id="reiniciar" class="reiniciar" type="button">Reiniciar partida</button>
+      </div>
+      <ol id="historial" class="historial__lista">
+        <li class="historial__vacio">Todavía no has jugado ninguna ronda.</li>
+      </ol>
+    </section>
+
+    <p class="reglas">Piedra gana a tijera &middot; Tijera gana a papel &middot; Papel gana a piedra</p>
+  </main>
+
+  <footer class="pie">
+    <p>Proyecto 3.2 &middot; Piedra, papel o tijera &middot; HTML, CSS y JavaScript</p>
+  </footer>
+
+  <script src="piedra-papel-tijera.js"></script>
+</body>
+</html>

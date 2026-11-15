@@ -1,0 +1,381 @@
+/* ==========================================================
+   Piedra, papel o tijera - estilos
+   Mismas variables de color que la calculadora, para que
+   todo el portafolio mantenga un diseño coherente.
+   ========================================================== */
+
+:root {
+  --color-fondo: #0f172a;
+  --color-superficie: #1e293b;
+  --color-superficie-2: #0b1220;
+  --color-texto: #e2e8f0;
+  --color-texto-suave: #94a3b8;
+  --color-borde: #334155;
+  --color-acento: #6366f1;
+  --color-acento-hover: #818cf8;
+  --color-victoria: #22c55e;
+  --color-derrota: #ef4444;
+  --color-empate: #eab308;
+  --radio: 14px;
+  --fuente: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--fuente);
+}
+
+/* ---------- Cabecera ---------- */
+.cabecera {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.cabecera h1 {
+  margin: 12px 0 4px;
+  font-size: 2rem;
+}
+
+.subtitulo {
+  margin: 0;
+  color: var(--color-texto-suave);
+  font-size: 0.95rem;
+}
+
+.volver {
+  color: var(--color-acento-hover);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.volver:hover,
+.volver:focus-visible {
+  text-decoration: underline;
+}
+
+/* ---------- Contenedor ---------- */
+.juego {
+  width: 100%;
+  max-width: 520px;
+  background: var(--color-superficie);
+  padding: 22px;
+  border-radius: 22px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- Marcador ---------- */
+.marcador {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.marcador__caja {
+  background: var(--color-superficie-2);
+  border-radius: var(--radio);
+  border-bottom: 3px solid var(--color-borde);
+  padding: 10px 6px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.marcador__caja--jugador { border-bottom-color: var(--color-victoria); }
+.marcador__caja--empate  { border-bottom-color: var(--color-empate); }
+.marcador__caja--pc      { border-bottom-color: var(--color-derrota); }
+
+.marcador__etiqueta {
+  font-size: 0.75rem;
+  color: var(--color-texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.marcador__valor {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.marcador__valor.sube {
+  animation: sube 0.4s ease;
+}
+
+@keyframes sube {
+  50% { transform: scale(1.4); }
+}
+
+/* ---------- Arena ---------- */
+.arena {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 8px;
+  padding: 18px 8px;
+  background: var(--color-superficie-2);
+  border-radius: var(--radio);
+}
+
+.jugador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.jugador__nombre {
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+}
+
+.mano {
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.2rem;
+  background: var(--color-superficie);
+  border: 3px solid var(--color-borde);
+  border-radius: 50%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.mano.pensando {
+  animation: agitar 0.35s infinite;
+}
+
+@keyframes agitar {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  25%      { transform: translateY(-8px) rotate(-8deg); }
+  75%      { transform: translateY(4px) rotate(8deg); }
+}
+
+.mano.ganadora {
+  border-color: var(--color-victoria);
+  box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.2);
+}
+
+.mano.perdedora {
+  border-color: var(--color-derrota);
+  opacity: 0.6;
+}
+
+.mano.empatada {
+  border-color: var(--color-empate);
+}
+
+.vs {
+  font-weight: 800;
+  color: var(--color-texto-suave);
+  font-size: 1.1rem;
+}
+
+/* ---------- Resultado ---------- */
+.resultado {
+  min-height: 2.2em;
+  margin: 18px 0;
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.resultado.victoria { color: var(--color-victoria); }
+.resultado.derrota  { color: var(--color-derrota); }
+.resultado.empate   { color: var(--color-empate); }
+
+/* ---------- Opciones ---------- */
+.opciones {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.opcion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 8px;
+  background: var(--color-borde);
+  color: var(--color-texto);
+  border: none;
+  border-radius: var(--radio);
+  font-family: var(--fuente);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.opcion:hover:not(:disabled) {
+  background: var(--color-acento);
+  transform: translateY(-3px);
+}
+
+.opcion:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.opcion:focus-visible {
+  outline: 3px solid var(--color-acento-hover);
+  outline-offset: 2px;
+}
+
+.opcion:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.opcion__icono {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.opcion__texto {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* ---------- Historial ---------- */
+.historial {
+  margin-top: 24px;
+}
+
+.historial__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.historial h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.reiniciar {
+  background: transparent;
+  color: var(--color-texto-suave);
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-family: var(--fuente);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.reiniciar:hover,
+.reiniciar:focus-visible {
+  color: var(--color-texto);
+  border-color: var(--color-acento-hover);
+  outline: none;
+}
+
+.historial__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 180px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.historial__lista li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--color-superficie-2);
+  border-left: 4px solid var(--color-borde);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.historial__lista li.victoria { border-left-color: var(--color-victoria); }
+.historial__lista li.derrota  { border-left-color: var(--color-derrota); }
+.historial__lista li.empate   { border-left-color: var(--color-empate); }
+
+.historial__lista .historial__vacio {
+  color: var(--color-texto-suave);
+  border-left-color: transparent;
+  justify-content: center;
+}
+
+.etiqueta-resultado {
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.victoria .etiqueta-resultado { color: var(--color-victoria); }
+.derrota  .etiqueta-resultado { color: var(--color-derrota); }
+.empate   .etiqueta-resultado { color: var(--color-empate); }
+
+/* ---------- Reglas y pie ---------- */
+.reglas {
+  margin: 20px 0 0;
+  text-align: center;
+  color: var(--color-texto-suave);
+  font-size: 0.8rem;
+}
+
+.pie {
+  margin-top: auto;
+  padding-top: 32px;
+  color: var(--color-texto-suave);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.pie p {
+  margin: 0;
+}
+
+/* ---------- Pantallas pequeñas ---------- */
+@media (max-width: 420px) {
+  .juego {
+    padding: 16px;
+  }
+
+  .mano {
+    width: 76px;
+    height: 76px;
+    font-size: 2.5rem;
+  }
+
+  .opcion__icono {
+    font-size: 1.8rem;
+  }
+
+  .resultado {
+    font-size: 1.15rem;
+  }
+}
+
+/* Respeta a quien prefiere menos animaciones */
+@media (prefers-reduced-motion: reduce) {
+  .mano.pensando,
+  .marcador__valor.sube {
+    animation: none;
+  }
+
+  .opcion {
+    transition: none;
+  }
+}
