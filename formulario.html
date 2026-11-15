@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto · </title>
+  <meta name="description" content="Formulario de contacto.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="cabecera">
+    <div class="cabecera__interior">
+      <a class="marca" href="index.html"><img src="img/logo.svg" alt="">NRD</a>
+      <nav aria-label="Navegación principal">
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="horario.html">Horario</a></li>
+          <li><a href="formulario.html" aria-current="page">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Escríbeme</h1>
+    <p>Rellena el formulario y te responderé lo antes posible. Los campos con asterisco son obligatorios.</p>
+
+    <form class="formulario" action="#" method="post">
+      <label for="nombre">Nombre *</label>
+      <input type="text" id="nombre" name="nombre" required autocomplete="name">
+
+      <label for="email">Correo electrónico *</label>
+      <input type="email" id="email" name="email" required autocomplete="email">
+      <p class="ayuda">Solo lo usaré para responderte.</p>
+
+      <label for="asignatura">Asignatura sobre la que preguntas</label>
+      <select id="asignatura" name="asignatura">
+        <option value="">Ninguna en concreto</option>
+        <option>Lenguaje de marcas</option>
+        <option>Programación</option>
+        <option>Bases de datos</option>
+        <option>Sistemas informáticos</option>
+        <option>Entornos de desarrollo</option>
+      </select>
+
+      <fieldset>
+        <legend>Motivo del mensaje *</legend>
+        <label class="opcion"><input type="radio" name="motivo" value="duda" required> Tengo una duda</label>
+        <label class="opcion"><input type="radio" name="motivo" value="propuesta"> Quiero proponer algo</label>
+        <label class="opcion"><input type="radio" name="motivo" value="otro"> Otro motivo</label>
+      </fieldset>
+
+      <label for="mensaje">Mensaje *</label>
+      <textarea id="mensaje" name="mensaje" required minlength="10"></textarea>
+
+      <label class="opcion"><input type="checkbox" name="acepto" required> Acepto que se use mi correo para responderme *</label>
+
+      <p></p>
+      <button class="boton" type="submit">Enviar mensaje</button>
+    </form>
+  </main>
+
+  <footer class="pie">
+    <div class="pie__interior">
+      <p>© 2026 Nacho Rueda Díaz. Trabajo del Tema 1.</p>
+      <p>Hecho con HTML y CSS · <a href="https://github.com/">Ver en GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>

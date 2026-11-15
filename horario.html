@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horario</title>
+  <meta name="description" content="Horario semanal de clases.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="cabecera">
+    <div class="cabecera__interior">
+      <a class="marca" href="index.html"><img src="img/logo.svg" alt="">NRD</a>
+      <nav aria-label="Navegación principal">
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="horario.html" aria-current="page">Horario</a></li>
+          <li><a href="formulario.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Horario</h1>
+    <p>Mi semana de clases, de lunes a viernes. Cada color corresponde a una asignatura.</p>
+
+    <div class="contenedor-tabla">
+      <table>
+        <caption>Horario semanal, curso 2026-2027</caption>
+        <thead>
+          <tr><th scope="col">Hora</th><th scope="col">Lunes</th><th scope="col">Martes</th><th scope="col">Miércoles</th><th scope="col">Jueves</th><th scope="col">Viernes</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">8:00 – 9:00</th><td class="m-web">Lenguaje de marcas</td><td class="m-prog">Programación</td><td class="m-bd">Bases de datos</td><td class="m-web">Lenguaje de marcas</td><td class="m-sis">Sistemas informáticos</td></tr>
+          <tr><th scope="row">9:00 – 10:00</th><td class="m-web">Lenguaje de marcas</td><td class="m-prog">Programación</td><td class="m-bd">Bases de datos</td><td class="m-prog">Programación</td><td class="m-sis">Sistemas informáticos</td></tr>
+          <tr><th scope="row">10:00 – 11:00</th><td class="m-ent">Entornos de desarrollo</td><td class="m-ing">Inglés técnico</td><td class="m-prog">Programación</td><td class="m-bd">Bases de datos</td><td class="m-web">Lenguaje de marcas</td></tr>
+          <tr class="recreo"><th scope="row">11:00 – 11:30</th><td colspan="5">Recreo</td></tr>
+          <tr><th scope="row">11:30 – 12:30</th><td class="m-sis">Sistemas informáticos</td><td class="m-ent">Entornos de desarrollo</td><td class="m-fol">FOL</td><td class="m-ing">Inglés técnico</td><td class="m-prog">Programación</td></tr>
+          <tr><th scope="row">12:30 – 13:30</th><td class="m-sis">Sistemas informáticos</td><td class="m-ent">Entornos de desarrollo</td><td class="m-fol">FOL</td><td class="m-bd">Bases de datos</td><td class="m-ent">Entornos de desarrollo</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ul class="leyenda" aria-label="Leyenda de colores">
+      <li><i class="m-web"></i>Lenguaje de marcas</li>
+      <li><i class="m-prog"></i>Programación</li>
+      <li><i class="m-bd"></i>Bases de datos</li>
+      <li><i class="m-sis"></i>Sistemas informáticos</li>
+      <li><i class="m-ent"></i>Entornos de desarrollo</li>
+      <li><i class="m-ing"></i>Inglés técnico</li>
+      <li><i class="m-fol"></i>FOL</li>
+    </ul>
+  </main>
+
+  <footer class="pie">
+    <div class="pie__interior">
+      <p>© 2026 Nacho Rueda Díaz. Trabajo del Tema 1.</p>
+      <p>Hecho con HTML y CSS · <a href="https://github.com/">Ver en GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>

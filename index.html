@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi primera pagina web</title>
+  <meta name="description" content="Presentación de mi web de clase: horario y formulario de contacto.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="cabecera">
+    <div class="cabecera__interior">
+      <a class="marca" href="index.html"><img src="img/logo.svg" alt="">NRD</a>
+      <nav aria-label="Navegación principal">
+        <ul class="menu">
+          <li><a href="index.html" aria-current="page">Inicio</a></li>
+          <li><a href="horario.html">Horario</a></li>
+          <li><a href="formulario.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Mi Primera, <span class="subrayado">Pagina web</span>.</h1>
+        <p class="hero__lead">Soy estudiante de desarrollo web y este es mi primera pagina web: aqui tienes mi horario de clases y una forma de ponerte en contacto conmigo.</p>
+        <div class="hero__acciones">
+          <a class="boton" href="horario.html">Ver mi horario</a>
+          
+        </div>
+      </div>
+      <aside class="miniatura" aria-hidden="true">
+        <div class="miniatura__rejilla">
+          <span style="background:#D5DCFF"></span><span style="background:#FFE14D"></span><span style="background:#BFEBDA"></span><span style="background:#FFD3C9"></span><span style="background:#E4D5FF"></span>
+          <span style="background:#FFE14D"></span><span style="background:#D5DCFF"></span><span style="background:#FFF1B0"></span><span style="background:#BFEBDA"></span><span style="background:#DDE3EE"></span>
+          <span style="background:#BFEBDA"></span><span style="background:#E4D5FF"></span><span style="background:#D5DCFF"></span><span style="background:#FFE14D"></span><span style="background:#FFD3C9"></span>
+        </div>
+        <p>Una semana de clases de un vistazo.</p>
+      </aside>
+    </section>
+
+    <section aria-labelledby="que-hay">
+      <h2 id="que-hay">Qué encontrarás aquí</h2>
+      <div class="secciones">
+        <article class="tarjeta">
+          <h3>Horario</h3>
+          <p>Las asignaturas de cada día, con un color por materia para localizarlas rápido.</p>
+        </article>
+        <article class="tarjeta">
+          <h3>Formulario</h3>
+          <p>Un formulario de contacto con validación para preguntas, dudas o propuestas.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="pie__interior">
+      <p>© Nacho Rueda Díaz. Trabajo del Tema 1.</p>
+      <p>Hecho con HTML y CSS · <a href="https://github.com/">Ver en GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
